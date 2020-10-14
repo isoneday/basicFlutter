@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 
+import 'utama_screen.dart';
+
 class FormLoginScreen extends StatefulWidget {
   @override
   _FormLoginScreenState createState() => _FormLoginScreenState();
@@ -126,6 +128,9 @@ class _FormLoginScreenState extends State<FormLoginScreen> {
   void cekValidasi(BuildContext context) {
     if (formKey.currentState.validate()) {
       Toast.show("Validasi berhasil", context);
+      //untuk perpindahan antar scaffold/halaman di flutter
+      Navigator.push(context, MaterialPageRoute(
+        builder: (context)=>UtamaScreen()));
     } else {
       Toast.show("Validasi gagal", context);
     }
