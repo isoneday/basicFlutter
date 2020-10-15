@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/makanan_screen.dart';
+import 'package:flutter_app/screens/minuman_screen.dart';
 
 class UtamaScreen extends StatelessWidget {
   @override
@@ -12,27 +14,30 @@ class UtamaScreen extends StatelessWidget {
           Flexible(
             child: Row(
               children: [
-                tampilanMenu(
-                    "list makanan", "gambar/gambar1.png", Colors.brown),
-                tampilanMenu("list buah", "gambar/gambar2.png", Colors.yellow)
+                tampilanMenu("list makanan", "gambar/gambar1.png", Colors.brown,
+                    context, MakananScreen()),
+                tampilanMenu("grid minuman", "gambar/gambar2.png",
+                    Colors.yellow, context, MinumanScreen())
               ],
             ),
           ),
           Flexible(
             child: Row(
               children: [
-                tampilanMenu(
-                    "list minuman", "gambar/gambar2.png", Colors.yellow),
-                tampilanMenu("list minuman", "gambar/gambar1.png", Colors.brown)
+                tampilanMenu("list makanan", "gambar/gambar2.png",
+                    Colors.yellow, context, MakananScreen()),
+                tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
+                    context, MinumanScreen())
               ],
             ),
           ),
           Flexible(
             child: Row(
               children: [
-                tampilanMenu(
-                    "list minuman", "gambar/gambar2.png", Colors.yellow),
-                tampilanMenu("list minuman", "gambar/gambar1.png", Colors.brown)
+                tampilanMenu("list makanan", "gambar/gambar2.png",
+                    Colors.yellow, context, MakananScreen()),
+                tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
+                    context, MinumanScreen()),
               ],
             ),
           ),
@@ -41,13 +46,15 @@ class UtamaScreen extends StatelessWidget {
     );
   }
 
-  Widget tampilanMenu(String title, String gambar, Color warna) {
+  Widget tampilanMenu(String title, String gambar, Color warna,
+      BuildContext context, Widget halTujuan) {
     return Flexible(
       child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: GestureDetector(
           onTap: () {
-            print("tap 1");
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => halTujuan));
           },
           child: Container(
             color: warna,

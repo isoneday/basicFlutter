@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
 import 'utama_screen.dart';
@@ -125,12 +126,15 @@ class _FormLoginScreenState extends State<FormLoginScreen> {
     }
   }
 
-  void cekValidasi(BuildContext context) {
+  Future<void> cekValidasi(BuildContext context) async {
     if (formKey.currentState.validate()) {
       Toast.show("Validasi berhasil", context);
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      //set session =true
+      preferences.setBool("sesi", true);
       //untuk perpindahan antar scaffold/halaman di flutter
-      Navigator.push(context, MaterialPageRoute(
-        builder: (context)=>UtamaScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => UtamaScreen()));
     } else {
       Toast.show("Validasi gagal", context);
     }
