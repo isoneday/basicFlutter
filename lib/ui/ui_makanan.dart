@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data/data_makanan.dart';
 import 'package:flutter_app/model/model_makanan.dart';
-import 'package:flutter_app/screens/makanan_screen.dart';
+import '../screens/makanan_screen.dart';
 
 class UiMakanan {
   Widget buildListView() {
@@ -11,8 +11,12 @@ class UiMakanan {
           ModelMakanan makanan = DataMakanan.getItemMakanan(index);
           return InkWell(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DetailMakanan(makanan: makanan,)));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailMakanan(
+                            makanan: makanan,
+                          )));
             },
             //row kita kasi jarak dengaan padding
             child: Padding(
@@ -48,5 +52,24 @@ class UiMakanan {
             ),
           );
         });
+  }
+
+  Widget buildDetailList(ModelMakanan makanan) {
+    return Column(
+      children: [
+        Image.asset(
+          makanan.gambarMkn,
+          fit: BoxFit.fill,
+        ),
+        Text(
+          makanan.namaMkn,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(makanan.detailMkn),
+        )
+      ],
+    );
   }
 }

@@ -18,13 +18,15 @@ class MakananScreen extends StatelessWidget {
 class DetailMakanan extends StatelessWidget {
   UiMakanan uiMakanan = UiMakanan();
   ModelMakanan makanan;
+  
   // DetailMakanan(this.makanan);
   DetailMakanan({Key key,@required this.makanan}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Detail Makanan"),),
-      body: uiMakanan.buildDetailList(),
+      body: uiMakanan.buildDetailList(makanan),
     );
   }
 }
