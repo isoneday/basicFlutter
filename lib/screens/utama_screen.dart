@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/makanan_screen.dart';
 import 'package:flutter_app/screens/minuman_screen.dart';
+import 'package:flutter_app/screens/portalberita_screen.dart';
 
 class UtamaScreen extends StatelessWidget {
   @override
@@ -24,8 +25,8 @@ class UtamaScreen extends StatelessWidget {
           Flexible(
             child: Row(
               children: [
-                tampilanMenu("list makanan", "gambar/gambar2.png",
-                    Colors.yellow, context, MakananScreen()),
+                tampilanMenu("Portal Berita", "gambar/gambar2.png",
+                    Colors.yellow, context, PortalBeritaScreen()),
                 tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
                     context, MinumanScreen())
               ],
