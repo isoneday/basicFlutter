@@ -4,7 +4,7 @@ import 'package:flutter_app/ui/ui_makanan.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class MakananScreen extends StatelessWidget {
- final UiMakanan uiMakanan = UiMakanan();
+  final UiMakanan uiMakanan = UiMakanan();
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class MakananScreen extends StatelessWidget {
 }
 
 class DetailMakanan extends StatelessWidget {
- final UiMakanan uiMakanan = UiMakanan();
- final ModelMakanan makanan;
+  final UiMakanan uiMakanan = UiMakanan();
+  final ModelMakanan makanan;
 
   // DetailMakanan(this.makanan);
   DetailMakanan({Key key, @required this.makanan}) : super(key: key);
@@ -43,8 +43,9 @@ class DetailMakanan extends StatelessWidget {
     );
   }
 }
+
 class WebMakanan extends StatelessWidget {
- final ModelMakanan makanan;
+  final ModelMakanan makanan;
 
   WebMakanan({Key key, @required this.makanan}) : super(key: key);
   @override
