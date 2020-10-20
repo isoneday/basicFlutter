@@ -25,8 +25,22 @@ class DetailMakanan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Detail Makanan"),),
+      appBar: AppBar(title: Text("Detail Makanan"),
+      actions: [
+        IconButton(icon: Icon(Icons.open_in_browser), onPressed: (){
+
+        })
+      ],),
       body: uiMakanan.buildDetailList(makanan),
+    );
+  }
+}
+
+class WebMakanan extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }

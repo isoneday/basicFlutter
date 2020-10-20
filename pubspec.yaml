@@ -32,6 +32,7 @@ dependencies:
   toast: ^0.1.5
   shared_preferences:
   flutter_launcher_icons: ^0.8.1
+  flutter_webview_plugin: ^0.3.11
 
 flutter_icons:
   android: "logoaplikasi"
