@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/camera_screen.dart';
+import 'package:flutter_app/screens/database_screen.dart';
 import 'package:flutter_app/screens/makanan_screen.dart';
 import 'package:flutter_app/screens/minuman_screen.dart';
 import 'package:flutter_app/screens/portalberita_screen.dart';
@@ -37,8 +38,8 @@ class UtamaScreen extends StatelessWidget {
           Flexible(
             child: Row(
               children: [
-                tampilanMenu("list makanan", "gambar/gambar2.png",
-                    Colors.yellow, context, MakananScreen.id),
+                tampilanMenu("database SQFlite", "gambar/gambar2.png",
+                    Colors.yellow, context, DatabaseScreen.id),
                 tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
                     context, MinumanScreen.id),
               ],

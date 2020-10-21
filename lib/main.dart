@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/camera_screen.dart';
+import 'package:flutter_app/screens/database_screen.dart';
 import 'package:flutter_app/screens/formlogin_screen.dart';
 import 'package:flutter_app/screens/makanan_screen.dart';
 import 'package:flutter_app/screens/minuman_screen.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         MinumanScreen.id: (context) => MinumanScreen(),
         PortalBeritaScreen.id: (context) => PortalBeritaScreen(),
         UtamaScreen.id: (context) => UtamaScreen(),
+        DatabaseScreen.id: (context) => DatabaseScreen(),
       },
     );
   }
