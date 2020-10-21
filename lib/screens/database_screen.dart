@@ -18,6 +18,7 @@ class _DatabaseScreenState extends State<DatabaseScreen> {
   var formKey = GlobalKey<FormState>();
   bool flag = false;
   List<User> values;
+  bool insertItem = false;
   var _listKey = GlobalKey<AnimatedListState>();
 
   @override
@@ -211,6 +212,9 @@ class _DatabaseScreenState extends State<DatabaseScreen> {
         txtnEmailController.text = "";
         Navigator.pop(context);
         Toast.show("berhasil insert Data,your name: ${value.name}", context);
+        setState(() {
+          insertItem = true;
+        });
       });
     } else {
       setState(() {
@@ -233,6 +237,10 @@ class _DatabaseScreenState extends State<DatabaseScreen> {
     var helper = Helper();
     await helper.getAllUsers().then((value) {
       items = value;
+      if (insertItem == true) {
+        _listKey.currentState.insertItem(values.length);
+        insertItem = false;
+      }
     });
     return items;
   }
@@ -369,11 +377,49 @@ class _DatabaseScreenState extends State<DatabaseScreen> {
     );
   }
 
-  editUser(int id) {}
+  editUser(int id) {
+    if (formKey.currentState.validate()) {
+      var user = User();
+      user.id = id;
+      user.name = txtNameController.text;
+      user.phone = txtPhoneController.text;
+      user.email = txtnEmailController.text;
+      var dbHelper = Helper();
+      dbHelper.update(user).then((update) {
+        txtNameController.text = "";
+        txtPhoneController.text = "";
+        txtnEmailController.text = "";
+        Navigator.of(context).pop();
+        setState(() {
+          flag = false;
+        });
+      });
+    } else {
+//    If all data are not valid then start auto validation.
+      setState(() {
+        _autoValidate = true;
+      });
+    }
+  }
 
-  onItemClick(User values) {}
+  onItemClick(User values) {
+    print("klik item ${values.name}");
+  }
 
-  onEdit(User values, int index) {}
+  onEdit(User values, int index) {
+    openAlertBox(values);
+  }
 
-  onDelete(User values, int index) {}
+  onDelete(User values, int index) {
+    var id = values.id;
+    var dbHelper = Helper();
+    dbHelper.delete(id).then((value) {
+      User removedItem = items.removeAt(index);
+
+      AnimatedListRemovedItemBuilder builder = (context, animation) {
+        return _buildItem(removedItem, animation, index);
+      };
+      _listKey.currentState.removeItem(index, builder);
+    });
+  }
 }
