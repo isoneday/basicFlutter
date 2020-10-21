@@ -23,18 +23,52 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: SplashLoadingScreen()
+      // ignore: missing_return
+      onGenerateRoute: (settings) {
+        // If you push the PassArguments route
+        if (settings.name == DetailMakanan.id) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return DetailMakanan(
+                makanan: settings.arguments,
+              );
+            },
+          );
+        } else if (settings.name == WebMakanan.id) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return WebMakanan(
+                makanan: settings.arguments,
+              );
+            },
+          );
+        } else if (settings.name == DetailBerita.id) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return DetailBerita(
+                articles: settings.arguments,
+              );
+            },
+          );
+        } else if (settings.name == WebBerita.id) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return WebBerita(
+                articles: settings.arguments,
+              );
+            },
+          );
+        }
+      },
+
       initialRoute: SplashLoadingScreen.id,
       routes: {
         SplashLoadingScreen.id: (context) => SplashLoadingScreen(),
         CameraScreen.id: (context) => CameraScreen(),
         FormLoginScreen.id: (context) => FormLoginScreen(),
         MakananScreen.id: (context) => MakananScreen(),
-        DetailMakanan.id: (context) => DetailMakanan(),
-        WebMakanan.id: (context) => WebMakanan(),
         MinumanScreen.id: (context) => MinumanScreen(),
         PortalBeritaScreen.id: (context) => PortalBeritaScreen(),
-        DetailBerita.id: (context) => DetailBerita(),
-        WebBerita.id: (context) => WebBerita(),
         UtamaScreen.id: (context) => UtamaScreen(),
       },
     );

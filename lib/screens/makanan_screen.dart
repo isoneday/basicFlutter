@@ -34,10 +34,7 @@ class DetailMakanan extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.open_in_browser),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => WebMakanan(makanan: makanan)));
+                Navigator.pushNamed(context, WebMakanan.id, arguments: makanan);
               })
         ],
       ),

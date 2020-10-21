@@ -10,12 +10,8 @@ class UiBerita {
           Articles dataArticle = articles[index];
           return InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetailBerita(
-                            articles: dataArticle,
-                          )));
+              Navigator.pushNamed(context, DetailBerita.id,
+                  arguments: dataArticle);
             },
             //row kita kasi jarak dengaan padding
             child: Padding(
@@ -60,7 +56,8 @@ class UiBerita {
     return Column(
       children: [
         Image.network(
-          articles?.urlToImage?? "https://clipartstation.com/wp-content/uploads/2017/11/newspaper-clipart-png-7.png",
+          articles?.urlToImage ??
+              "https://clipartstation.com/wp-content/uploads/2017/11/newspaper-clipart-png-7.png",
           fit: BoxFit.fill,
         ),
         Text(
@@ -69,7 +66,7 @@ class UiBerita {
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(articles?.description?? "no description"),
+          child: Text(articles?.description ?? "no description"),
         )
       ],
     );

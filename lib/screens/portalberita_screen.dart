@@ -60,7 +60,6 @@ class _PortalBeritaScreenState extends State<PortalBeritaScreen> {
 
 class DetailBerita extends StatelessWidget {
   static String id = "detailberita";
-  
 
   final UiBerita uiBerita = UiBerita();
   final Articles articles;
@@ -77,10 +76,7 @@ class DetailBerita extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.open_in_browser),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => WebBerita(articles: articles)));
+                Navigator.pushNamed(context, WebBerita.id, arguments: articles);
               })
         ],
       ),

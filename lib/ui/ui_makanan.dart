@@ -11,12 +11,8 @@ class UiMakanan {
           ModelMakanan makanan = DataMakanan.getItemMakanan(index);
           return InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetailMakanan(
-                            makanan: makanan,
-                          )));
+              Navigator.pushNamed(context, DetailMakanan.id,
+                  arguments: makanan);
             },
             //row kita kasi jarak dengaan padding
             child: Padding(
