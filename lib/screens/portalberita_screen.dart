@@ -6,6 +6,7 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:toast/toast.dart';
 
 class PortalBeritaScreen extends StatefulWidget {
+  static String id = "portalberita";
   @override
   _PortalBeritaScreenState createState() => _PortalBeritaScreenState();
 }
@@ -58,6 +59,9 @@ class _PortalBeritaScreenState extends State<PortalBeritaScreen> {
 }
 
 class DetailBerita extends StatelessWidget {
+  static String id = "detailberita";
+  
+
   final UiBerita uiBerita = UiBerita();
   final Articles articles;
 
@@ -86,6 +90,7 @@ class DetailBerita extends StatelessWidget {
 }
 
 class WebBerita extends StatelessWidget {
+  static String id = "webbrita";
   final Articles articles;
 
   WebBerita({Key key, @required this.articles}) : super(key: key);

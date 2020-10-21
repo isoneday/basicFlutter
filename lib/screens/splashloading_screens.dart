@@ -7,6 +7,7 @@ import 'package:splashscreen/splashscreen.dart';
 import 'utama_screen.dart';
 
 class SplashLoadingScreen extends StatelessWidget {
+  static String id = "splash";
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
@@ -24,11 +25,9 @@ class SplashLoadingScreen extends StatelessWidget {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     bool sesi = preferences.getBool("sesi") ?? false;
     if (sesi == true) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => UtamaScreen()));
+      Navigator.pushReplacementNamed(context, UtamaScreen.id);
     } else {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => FormLoginScreen()));
+      Navigator.pushReplacementNamed(context, FormLoginScreen.id);
     }
   }
 }

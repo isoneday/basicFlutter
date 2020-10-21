@@ -5,6 +5,7 @@ import 'package:toast/toast.dart';
 import 'utama_screen.dart';
 
 class FormLoginScreen extends StatefulWidget {
+  static String id = "formlogin";
   @override
   _FormLoginScreenState createState() => _FormLoginScreenState();
 }
@@ -133,8 +134,7 @@ class _FormLoginScreenState extends State<FormLoginScreen> {
       //set session =true
       preferences.setBool("sesi", true);
       //untuk perpindahan antar scaffold/halaman di flutter
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => UtamaScreen()));
+      Navigator.pushNamed(context, UtamaScreen.id);
     } else {
       Toast.show("Validasi gagal", context);
     }

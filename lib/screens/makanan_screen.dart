@@ -4,6 +4,7 @@ import 'package:flutter_app/ui/ui_makanan.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class MakananScreen extends StatelessWidget {
+  static String id = "makanan";
   final UiMakanan uiMakanan = UiMakanan();
 
   @override
@@ -17,6 +18,7 @@ class MakananScreen extends StatelessWidget {
 }
 
 class DetailMakanan extends StatelessWidget {
+  static String id = "detailmakanan";
   final UiMakanan uiMakanan = UiMakanan();
   final ModelMakanan makanan;
 
@@ -45,6 +47,7 @@ class DetailMakanan extends StatelessWidget {
 }
 
 class WebMakanan extends StatelessWidget {
+  static String id = "webmaakanan";
   final ModelMakanan makanan;
 
   WebMakanan({Key key, @required this.makanan}) : super(key: key);

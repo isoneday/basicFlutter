@@ -5,6 +5,7 @@ import 'package:flutter_app/screens/minuman_screen.dart';
 import 'package:flutter_app/screens/portalberita_screen.dart';
 
 class UtamaScreen extends StatelessWidget {
+  static String id = "utama";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +18,9 @@ class UtamaScreen extends StatelessWidget {
             child: Row(
               children: [
                 tampilanMenu("list makanan", "gambar/gambar1.png", Colors.brown,
-                    context, MakananScreen()),
+                    context, MakananScreen.id),
                 tampilanMenu("grid minuman", "gambar/gambar2.png",
-                    Colors.yellow, context, MinumanScreen())
+                    Colors.yellow, context, MinumanScreen.id)
               ],
             ),
           ),
@@ -27,9 +28,9 @@ class UtamaScreen extends StatelessWidget {
             child: Row(
               children: [
                 tampilanMenu("Portal Berita", "gambar/gambar2.png",
-                    Colors.yellow, context, PortalBeritaScreen()),
+                    Colors.yellow, context, PortalBeritaScreen.id),
                 tampilanMenu("Camera", "gambar/gambar1.png", Colors.brown,
-                    context, CameraScreen())
+                    context, CameraScreen.id)
               ],
             ),
           ),
@@ -37,9 +38,9 @@ class UtamaScreen extends StatelessWidget {
             child: Row(
               children: [
                 tampilanMenu("list makanan", "gambar/gambar2.png",
-                    Colors.yellow, context, MakananScreen()),
+                    Colors.yellow, context, MakananScreen.id),
                 tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
-                    context, MinumanScreen()),
+                    context, MinumanScreen.id),
               ],
             ),
           ),
@@ -49,14 +50,13 @@ class UtamaScreen extends StatelessWidget {
   }
 
   Widget tampilanMenu(String title, String gambar, Color warna,
-      BuildContext context, Widget halTujuan) {
+      BuildContext context, String halTujuan) {
     return Flexible(
       child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => halTujuan));
+            Navigator.pushNamed(context, halTujuan);
           },
           child: Container(
             color: warna,
