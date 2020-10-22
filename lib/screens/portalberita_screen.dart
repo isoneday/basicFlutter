@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/model_portalberita.dart';
-import 'package:flutter_app/network/network_berita.dart';
+import 'package:flutter_app/network/network.dart';
 import 'package:flutter_app/ui/ui_berita.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:toast/toast.dart';
@@ -14,7 +14,7 @@ class PortalBeritaScreen extends StatefulWidget {
 class _PortalBeritaScreenState extends State<PortalBeritaScreen> {
   bool loading;
   List<Articles> articles;
-  NetworkBerita networkBerita = NetworkBerita();
+  Network networkBerita = Network();
   UiBerita uiBerita = UiBerita();
   @override
   void initState() {

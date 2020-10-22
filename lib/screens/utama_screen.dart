@@ -9,43 +9,46 @@ class UtamaScreen extends StatelessWidget {
   static String id = "utama";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Halaman Utama"),
-      ),
-      body: Column(
-        children: [
-          Flexible(
-            child: Row(
-              children: [
-                tampilanMenu("list makanan", "gambar/gambar1.png", Colors.brown,
-                    context, MakananScreen.id),
-                tampilanMenu("grid minuman", "gambar/gambar2.png",
-                    Colors.yellow, context, MinumanScreen.id)
-              ],
+    return Container(
+      
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Halaman Utama"),
+        ),
+        body: Column(
+          children: [
+            Flexible(
+              child: Row(
+                children: [
+                  tampilanMenu("list makanan", "gambar/gambar1.png", Colors.brown,
+                      context, MakananScreen.id),
+                  tampilanMenu("grid minuman", "gambar/gambar2.png",
+                      Colors.yellow, context, MinumanScreen.id)
+                ],
+              ),
             ),
-          ),
-          Flexible(
-            child: Row(
-              children: [
-                tampilanMenu("Portal Berita", "gambar/gambar2.png",
-                    Colors.yellow, context, PortalBeritaScreen.id),
-                tampilanMenu("Camera", "gambar/gambar1.png", Colors.brown,
-                    context, CameraScreen.id)
-              ],
+            Flexible(
+              child: Row(
+                children: [
+                  tampilanMenu("Portal Berita", "gambar/gambar2.png",
+                      Colors.yellow, context, PortalBeritaScreen.id),
+                  tampilanMenu("Camera", "gambar/gambar1.png", Colors.brown,
+                      context, CameraScreen.id)
+                ],
+              ),
             ),
-          ),
-          Flexible(
-            child: Row(
-              children: [
-                tampilanMenu("database SQFlite", "gambar/gambar2.png",
-                    Colors.yellow, context, DatabaseScreen.id),
-                tampilanMenu("grid minuman", "gambar/gambar1.png", Colors.brown,
-                    context, MinumanScreen.id),
-              ],
+            Flexible(
+              child: Row(
+                children: [
+                  tampilanMenu("database SQFlite", "gambar/gambar2.png",
+                      Colors.yellow, context, DatabaseScreen.id),
+                  tampilanMenu("ExpantionTile", "gambar/gambar1.png", Colors.brown,
+                      context, MinumanScreen.id),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
