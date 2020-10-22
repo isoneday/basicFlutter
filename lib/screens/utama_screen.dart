@@ -4,13 +4,13 @@ import 'package:flutter_app/screens/database_screen.dart';
 import 'package:flutter_app/screens/makanan_screen.dart';
 import 'package:flutter_app/screens/minuman_screen.dart';
 import 'package:flutter_app/screens/portalberita_screen.dart';
+import 'package:flutter_app/screens/quiz_screen.dart';
 
 class UtamaScreen extends StatelessWidget {
   static String id = "utama";
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       child: Scaffold(
         appBar: AppBar(
           title: Text("Halaman Utama"),
@@ -20,8 +20,8 @@ class UtamaScreen extends StatelessWidget {
             Flexible(
               child: Row(
                 children: [
-                  tampilanMenu("list makanan", "gambar/gambar1.png", Colors.brown,
-                      context, MakananScreen.id),
+                  tampilanMenu("list makanan", "gambar/gambar1.png",
+                      Colors.brown, context, MakananScreen.id),
                   tampilanMenu("grid minuman", "gambar/gambar2.png",
                       Colors.yellow, context, MinumanScreen.id)
                 ],
@@ -42,8 +42,8 @@ class UtamaScreen extends StatelessWidget {
                 children: [
                   tampilanMenu("database SQFlite", "gambar/gambar2.png",
                       Colors.yellow, context, DatabaseScreen.id),
-                  tampilanMenu("ExpantionTile", "gambar/gambar1.png", Colors.brown,
-                      context, MinumanScreen.id),
+                  tampilanMenu("ExpantionTile", "gambar/gambar1.png",
+                      Colors.brown, context, QuizScreen.id),
                 ],
               ),
             ),

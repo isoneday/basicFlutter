@@ -5,6 +5,7 @@ import 'package:flutter_app/screens/formlogin_screen.dart';
 import 'package:flutter_app/screens/makanan_screen.dart';
 import 'package:flutter_app/screens/minuman_screen.dart';
 import 'package:flutter_app/screens/portalberita_screen.dart';
+import 'package:flutter_app/screens/quiz_screen.dart';
 import 'package:flutter_app/screens/splashloading_screens.dart';
 import 'package:flutter_app/screens/utama_screen.dart';
 
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         PortalBeritaScreen.id: (context) => PortalBeritaScreen(),
         UtamaScreen.id: (context) => UtamaScreen(),
         DatabaseScreen.id: (context) => DatabaseScreen(),
+        QuizScreen.id: (context) => QuizScreen(),
       },
     );
   }
